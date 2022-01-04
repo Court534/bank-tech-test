@@ -27,5 +27,11 @@ describe Account do
       account.deposit(1)
       expect { account.withdraw(1) }.to change { account.transaction_log.length }.by(1)
     end
+
+    it "Raises an error" do
+      account = Account.new 
+      account.deposit(1)
+      expect { account.withdraw(2) }.to raise_error("Error! Insufficient funds")
+    end
   end
 end
