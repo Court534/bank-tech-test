@@ -19,4 +19,8 @@ class Account
     @balance -= amount
     @transaction_log.push(amount)
   end
+
+  def show_transaction_log
+    @transaction_log.display
+  end
 end
